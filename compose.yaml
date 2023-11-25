@@ -2,11 +2,11 @@ version: '3.8'
 
 services:
   server:
-    restart: always
+    # restart: always
     build:
       context: ./server
     ports:
-      - '80:3000'
+      - '8080:3000'
     environment:
       - DATABASE_HOST=postgres
       - DATABASE_USER=postgres

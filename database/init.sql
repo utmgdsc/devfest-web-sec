@@ -14,6 +14,14 @@ CREATE TABLE IF NOT EXISTS stories (
     upload_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    username TEXT,
+    password TEXT
+);
+
+INSERT INTO users (username, password) VALUES ('admin', 'VerySecretPassword');
+
 COPY books
 FROM '/docker-entrypoint-initdb.d/books.csv'
 DELIMITER ','

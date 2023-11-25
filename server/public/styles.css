@@ -190,3 +190,44 @@ h1 {
   font-style: italic;
   color: #888;
 }
+
+/* Login */
+
+.login-form {
+  width: 300px;
+  margin: 50px auto; /* Center the form horizontally with some top margin */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 14px;
+  margin-bottom: 10px;
+  border: 1px solid #ff0000;
+  background-color: #ffe6e6;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/* Admin */
+
+.admin-welcome {
+  width: 300px;
+  margin: 50px auto; /* Center the content */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.admin-welcome h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.admin-welcome p {
+  text-align: center;
+}

@@ -13,7 +13,7 @@ To bring up the web app:
 make up
 ```
 
-This command will start the application using Docker containers.
+This command will start the application using Docker containers. It will be accessible at http://localhost:8080/
 
 ## Shutting Down the App
 To stop the application and shut down the Docker containers, use the following command:
