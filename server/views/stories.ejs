@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stories</title>
+  <link rel="stylesheet" href="/public/styles.css">
+</head>
+<body>
+  <%- include('./partials/header') %>
+
+  <div class="content">
+    <div class="story-upload-form">
+      <h2>Upload Your Story</h2>
+      <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" required><br><br>
+
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" rows="4" required></textarea><br><br>
+
+        <label for="file">Upload .docx file:</label>
+        <input type="file" id="file" name="file" accept=".docx" required><br><br>
+
+        <button type="submit">Upload Story</button>
+      </form>
+    </div>
+
+    <div class="story-list">
+      <% stories.forEach(story => { %>
+        <div class="story-card">
+          <h2><%= story.title %></h2>
+          <p>Author: <%= story.author %></p>
+          <p>Description: <%= story.description %></p>
+          <p class="timestamp">Uploaded: <%= story.upload_timestamp %></p>
+          <a href="<%= story.pdf_path %>" target="_blank">View PDF</a>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</body>
+</html>

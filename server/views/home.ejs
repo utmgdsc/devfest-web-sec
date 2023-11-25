@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="/public/styles.css">
+</head>
+<body>
+  <%- include('./partials/header') %>
+
+  <div class="content">
+    <div class="hero-section">
+      <h1>Welcome to the Super-Secure Library</h1>
+      <p>Explore our books and community stories!</p>
+    </div>
+
+    <div class="features">
+      <div class="feature-box">
+        <h2>Top Books</h2>
+        <p>Discover our collection.</p>
+        <a href="/top-books">Explore</a>
+      </div>
+      <div class="feature-box">
+        <h2>Community Stories</h2>
+        <p>Read short stories written by the community.</p>
+        <a href="/stories">Explore</a>
+      </div>
+      <div class="feature-box">
+        <h2>Search Books</h2>
+        <p>Find your favorite books quickly.</p>
+        <form action="/search-books" method="GET" class="search-form">
+          <input type="text" name="searchTerm" placeholder="Search...">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
