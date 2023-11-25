@@ -81,6 +81,7 @@ app.get('/top-books', async (req, res) => {
 app.get('/search-books', async (req, res) => {
   try {
     const { searchTerm } = req.query;
+
     // const query = 'SELECT * FROM books WHERE title ILIKE $1 OR author ILIKE $1'; //- FIX HERE
     // const { rows } = await pool.query(query, [`%${searchTerm}%`]); //- FIX HERE
     const { rows } = await pool.query(`SELECT * FROM books WHERE title ILIKE '%${searchTerm}%' OR author ILIKE '%${searchTerm}%'`);
@@ -131,7 +132,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 app.post('/login', async (req, res) => {
   try {
     const { username, password } = req.body;
-    // if ((await pool.query(`SELECT id FROM users WHERE username=$1 AND password=$2`, [username, password])).count !== 0) { // FIX HERE
+    // if ((await pool.query(`SELECT id FROM users WHERE username=$1 AND password=$2`, [username, password])).rowCount !== 0) { // FIX HERE
     if ((await pool.query(`SELECT id FROM users WHERE username='${username}' AND password='${password}'`)).rowCount !== 0) {
       req.session.authenticated = true;
       res.redirect('/admin');
